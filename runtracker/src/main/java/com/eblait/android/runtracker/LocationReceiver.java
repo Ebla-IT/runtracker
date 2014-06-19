@@ -1,4 +1,4 @@
-package com.bignerdranch.android.runtracker;
+package com.eblait.android.runtracker;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

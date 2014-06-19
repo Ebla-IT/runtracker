@@ -1,4 +1,4 @@
-package com.bignerdranch.android.runtracker;
+package com.eblait.android.runtracker;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -171,5 +171,15 @@ public class RunDatabaseHelper extends SQLiteOpenHelper {
             loc.setTime(getLong(getColumnIndex(COLUMN_LOCATION_TIMESTAMP)));
             return loc;
         }
+    }
+    public LocationCursor queryLocationsForRun(long runId) {
+        Cursor wrapped = getReadableDatabase().query(TABLE_LOCATION,
+                null,
+                COLUMN_LOCATION_RUN_ID + " = ?", // limit to the given run
+                new String[]{ String.valueOf(runId) },
+                null, // group by
+                null, // having
+                COLUMN_LOCATION_TIMESTAMP + " asc"); // order by timestamp
+        return new LocationCursor(wrapped);
     }
 }

@@ -1,4 +1,4 @@
-package com.bignerdranch.android.runtracker;
+package com.eblait.android.runtracker;
 
 
 import android.content.Context;
@@ -18,7 +18,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bignerdranch.android.runtracker.RunDatabaseHelper.RunCursor;
+import com.eblait.android.runtracker.RunDatabaseHelper.RunCursor;
 
 /**
  * Created by habraham on 5/10/14.

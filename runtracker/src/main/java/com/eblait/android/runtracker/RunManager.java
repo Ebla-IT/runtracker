@@ -1,4 +1,4 @@
-package com.bignerdranch.android.runtracker;
+package com.eblait.android.runtracker;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,9 +8,9 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
 
-import com.bignerdranch.android.runtracker.RunDatabaseHelper.RunCursor;
+import com.eblait.android.runtracker.RunDatabaseHelper.RunCursor;
 
-import com.bignerdranch.android.runtracker.RunDatabaseHelper.LocationCursor;
+import com.eblait.android.runtracker.RunDatabaseHelper.LocationCursor;
 
 /**
  * Created by habraham on 5/10/14.
@@ -23,7 +23,7 @@ public class RunManager {
     private static final String PREFS_FILE = "runs";
     private static final String PREF_CURRENT_RUN_ID = "RunManager.currentRunId";
 
-    public static final String ACTION_LOCATION = "om.bignerdranch.android.runtracker" +
+    public static final String ACTION_LOCATION = "com.eblait.android.runtracker" +
             ".ACTION_LOCATION";
 
     private static RunManager sRunManager;
@@ -157,5 +157,9 @@ public class RunManager {
 
     public boolean isTrackingRun(Run run) {
         return run != null && run.getId() == mCurrentRunId;
+    }
+
+    public LocationCursor queryLocationsForRun(long runId) {
+        return mHelper.queryLocationsForRun(runId);
     }
 }
